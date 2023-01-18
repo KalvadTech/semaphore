@@ -86,8 +86,8 @@ func (t *TaskRunner) setStatus(status db.TaskStatus) {
 
 	if status == db.TaskSuccessStatus || status == db.TaskFailStatus {
 		t.sendTelegramAlert()
-		t.sendSlackAlert()
 	}
+	t.sendSlackAlert()
 }
 
 func (t *TaskRunner) updateStatus() {
