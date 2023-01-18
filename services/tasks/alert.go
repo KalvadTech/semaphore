@@ -156,10 +156,6 @@ func (t *TaskRunner) sendSlackAlert() {
 		return
 	}
 
-	if t.template.SuppressSuccessAlerts && t.task.Status == db.TaskSuccessStatus {
-		return
-	}
-
 	slackUrl := util.Config.SlackUrl
 
 	var slackBuffer bytes.Buffer
